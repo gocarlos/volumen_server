@@ -8,5 +8,8 @@ before_install:
   - docker —version
   - echo “ENV GIT_SHA ${TRAVIS_COMMIT}” >> Dockerfile
   - docker-compose up
-  - docker-compose down
+
+  #TODO(gocarlos): add here some tests
   
+after_script:
+  - docker-compose down

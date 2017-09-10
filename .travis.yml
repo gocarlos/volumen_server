@@ -1,10 +1,10 @@
-sudo: required
-language: python
+sudo:                 required
+language:             python
 
 services:
   - docker
-  
-  
+
+
 before_install:
   - sudo apt-get update
   # - sudo apt-get install docker-engine
@@ -13,15 +13,14 @@ before_install:
   - docker-compose version
   # - echo “ENV GIT_SHA ${TRAVIS_COMMIT}” >> Dockerfile
   # - docker-compose up
-  
+
 install:
   - docker-compose build
-  - docker-compose up -d 
+  - docker-compose up -d
   
-  #TODO(gocarlos): add here some tests
-
-script: 
-  - wget localhost:80 
+script:
+  - wget localhost:80
+  #TODO(gocarlos):    add here some tests
 
 
 after_script:

@@ -13,21 +13,18 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url
+from django.conf.urls import include, url
 from django.contrib import admin
 
 # Import the new view we created
 from volumen_main_app.views import HomeView
-from volumen_status_app.views import StatusView
-from podcast_browser_app.views import BrowseView
-from user_management_app.views import UserView
-from player_app.views import PlayerView
+
 
 urlpatterns = [
-url(r'^$', HomeView.as_view()),
+    url(r'^$', HomeView.as_view()),
     url(r'^admin/', admin.site.urls),
-    url(r'^status/', StatusView.as_view()),
-    url(r'^browse/', BrowseView.as_view()),
-    url(r'^user/', UserView.as_view()),
-    url(r'^player/', PlayerView.as_view()),
+    url(r'^status/', include('volumen_status_app.urls')),
+    url(r'^browse/', include('podcast_browser_app.urls')),
+    url(r'^user/', include('user_management_app.urls')),
+    url(r'^player/', include('player_app.urls')),
 ]

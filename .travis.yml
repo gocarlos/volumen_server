@@ -20,5 +20,9 @@ install:
   
   #TODO(gocarlos): add here some tests
 
+script: 
+  - wget localhost:80 
+
+
 after_script:
   - docker-compose down

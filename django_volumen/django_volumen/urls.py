@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from volumen_main_app.views import HomeView # Import the new view we created
+
+# Import the new view we created
+from volumen_main_app.views import HomeView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),

@@ -18,13 +18,15 @@ from django.contrib import admin
 
 # Import the new view we created
 from volumen_main_app.views import HomeView
+from volumen_status_app.views import StatusView
 
 
 urlpatterns = [
     url(r'^$', HomeView.as_view()),
     url(r'^admin/', admin.site.urls),
-    url(r'^status/', include('volumen_status_app.urls')),
+    url(r'^status/', StatusView.as_view()),
     url(r'^browse/', include('podcast_browser_app.urls')),
     url(r'^user/', include('user_management_app.urls')),
     url(r'^player/', include('player_app.urls')),
+    url(r'^help/', include('player_app.urls')),
 ]

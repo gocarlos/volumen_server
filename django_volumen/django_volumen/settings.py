@@ -21,7 +21,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
-SECRET_KEY = SECRET_KEY_HIDDEN
+
+
+ci = os.environ['CI']
+if ci=='true': 
+    print('Doing a ci build')
+    SECRET_KEY = int(os.environ['SECRET_KEY'])
+else:
+    SECRET_KEY = SECRET_KEY_HIDDEN
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True

@@ -28,5 +28,5 @@ urlpatterns = [
     url(r'^browse/', include('podcast_browser_app.urls')),
     url(r'^user/', include('user_management_app.urls')),
     url(r'^player/', include('player_app.urls')),
-    url(r'^help/', include('player_app.urls')),
+    # url(r'^help/', include('player_app.urls')),
 ]

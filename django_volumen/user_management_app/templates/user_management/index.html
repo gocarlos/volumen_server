@@ -1,7 +1,14 @@
+{% load staticfiles %}
+
 <html>
 
 <head>
   <title>Home Page</title>
+  {% block styling %}
+  <link rel="stylesheet" type="text/css" href="{% static 'mystyle.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'skeleton/css/normalize.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'skeleton/css/skeleton.css' %}">
+  {% endblock styling %}
 </head>
 
 <body>

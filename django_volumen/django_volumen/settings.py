@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'podcast_browser_app',
     'player_app',
     'user_management_app',
+    'volumen_help',
 ]
 
 MIDDLEWARE = [

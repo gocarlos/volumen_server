@@ -30,9 +30,8 @@
 
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    {% block favicon %}
-  <link rel="icon" type="image/png" href="{% static 'skeleton/images/favicon.png' %}">
-{% endblock favicon %}
+  {% block favicon %}
+  <link rel="icon" type="image/png" href="{% static 'skeleton/images/favicon.png' %}"> {% endblock favicon %}
 </head>
 
 <body>
@@ -40,14 +39,20 @@
 
   <div class="container">
     <div class="navbar-spacer"></div>
-    {% block header %}
-       {% include "common/header.html" %}
-    {% endblock %}
+    {% block header %} {% include "common/header.html" %} {% endblock %}
 
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    {% block footer %}
-       {% include "common/footer.html" %}
-    {% endblock %}
+
+
+
+    <h1>FAQ</h1>
+    <li> Volumen </li>
+    <li> Volumen </li>
+    <li> Volumen </li>
+    <li> Volumen </li>
+    <li> Volumen </li>
+
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br> {% block footer %} {% include "common/footer.html" %} {% endblock %}
   </div>
 
   <!-- End Document

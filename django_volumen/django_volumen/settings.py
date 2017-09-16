@@ -11,8 +11,8 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
+import sys
 from django_volumen.settings_secret import *
-
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -22,12 +22,22 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 
-ci = os.environ['CI']
-if ci=='true':
-    print('Doing a ci build')
-    SECRET_KEY = int(os.environ['SECRET_KEY'])
-else:
-    SECRET_KEY = SECRET_KEY_HIDDEN
+print("\n\n\n\n------------ENV VIRIABLES----------------")
+
+for k in os.environ:
+    sys.stdout.write("{0:<25} : {1:<51}\n".format(k,os.environ[k]))
+print("------------------------------------------\n\n\n\n")
+
+
+# if "CI" in os.environ:
+#     print('Doing a ci build')
+#     ci = os.environ['CI']
+#     SECRET_KEY = int(os.environ['SECRET_KEY'])
+# else:
+    # print('CI not found')
+
+SECRET_KEY = SECRET_KEY_HIDDEN
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True

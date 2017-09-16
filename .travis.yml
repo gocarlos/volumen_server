@@ -1,5 +1,5 @@
-sudo:                 required
-language:             python
+sudo:              required
+language:          python
 
 services:
   - docker
@@ -16,8 +16,7 @@ install:
 
 script:
   - wget localhost:80
-  #TODO(gocarlos):    add here some tests
-
+  #TODO(gocarlos): add here some tests
 
 after_script:
   - docker-compose down

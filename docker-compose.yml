@@ -6,7 +6,8 @@ services:
     image: postgres
   web:
     environment:
-      SECRET_KEY:
+      - SECRET_KEY=${SECRET_KEY}
+      - CI=${CI}
     build: .
     command: python3 django_volumen/manage.py runserver 0.0.0.0:80
     volumes:

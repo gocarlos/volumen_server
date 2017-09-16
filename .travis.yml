@@ -9,7 +9,9 @@ before_install:
   - sudo apt-get update
   - docker version
   - docker-compose version
-
+  - echo $CI
+  - echo $SECRET_KEY
+  
 install:
   - docker-compose build
   - docker-compose up -d

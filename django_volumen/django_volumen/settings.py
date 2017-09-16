@@ -23,11 +23,15 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 print("\n\n\n\n------------ENV VIRIABLES----------------")
-
+bool found=False
 for k in os.environ:
     sys.stdout.write("{0:<25} : {1:<51}\n".format(k,os.environ[k]))
+    if k == "SECRET_KEY":
+        found=True
 print("------------------------------------------\n\n\n\n")
-
+if not found:
+    print("Key not found")
+    exit(1)
 
 # if "CI" in os.environ:
 #     print('Doing a ci build')

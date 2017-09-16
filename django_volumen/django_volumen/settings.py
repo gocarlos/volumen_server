@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 print("\n\n\n\n------------ENV VIRIABLES----------------")
-bool found=False
+found=False
 for k in os.environ:
     sys.stdout.write("{0:<25} : {1:<51}\n".format(k,os.environ[k]))
     if k == "SECRET_KEY":

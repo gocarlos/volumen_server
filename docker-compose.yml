@@ -1,12 +1,12 @@
 version: '2'
 
-environment:
-  SECRET_KEY:
 
 services:
   db:
     image: postgres
   web:
+    environment:
+      SECRET_KEY:
     build: .
     command: python3 django_volumen/manage.py runserver 0.0.0.0:80
     volumes:

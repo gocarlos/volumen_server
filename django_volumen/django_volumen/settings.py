@@ -22,9 +22,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 
-
 ci = os.environ['CI']
-if ci=='true': 
+if ci=='true':
     print('Doing a ci build')
     SECRET_KEY = int(os.environ['SECRET_KEY'])
 else:

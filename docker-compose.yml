@@ -1,5 +1,8 @@
 version: '2'
 
+environment:
+  SECRET_KEY_HIDDEN:
+
 services:
   db:
     image: postgres

@@ -1,7 +1,7 @@
 version: '2'
 
 environment:
-  SECRET_KEY_HIDDEN:
+  SECRET_KEY:
 
 services:
   db:

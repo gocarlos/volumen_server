@@ -11,6 +11,8 @@ before_install:
   - docker-compose version
   - echo $CI
   - echo $SECRET_KEY
+  - python test.py
+
   
 install:
   - docker-compose build

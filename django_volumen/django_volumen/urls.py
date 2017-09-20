@@ -27,7 +27,9 @@ urlpatterns = [
     url(r'^status/', StatusView.as_view()),
     url(r'^browse/', include('volumen_podcast_browser_app.urls')),
     url(r'^user/', include('volumen_user_app.urls')),
+    # url(r'^user/(?P<username>\w+)/', include('userapp.urls')),
     url(r'^player/', include('volumen_player_app.urls')),
     url(r'^help/', include('volumen_help_app.urls')),
+
     # handler404 = 'path.to.views.custom404'
 ]

@@ -25,10 +25,9 @@ urlpatterns = [
     url(r'^$', HomeView.as_view()),
     url(r'^admin/', admin.site.urls),
     url(r'^status/', StatusView.as_view()),
-    url(r'^browse/', include('podcast_browser_app.urls')),
-    url(r'^user/', include('user_management_app.urls')),
-    url(r'^player/', include('player_app.urls')),
-    url(r'^help/', include('volumen_help.urls')),
+    url(r'^browse/', include('volumen_podcast_browser_app.urls')),
+    url(r'^user/', include('volumen_user_app.urls')),
+    url(r'^player/', include('volumen_player_app.urls')),
+    url(r'^help/', include('volumen_help_app.urls')),
     # handler404 = 'path.to.views.custom404'
-
 ]

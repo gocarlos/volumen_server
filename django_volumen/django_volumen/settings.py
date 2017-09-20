@@ -17,34 +17,27 @@ from django_volumen.settings_secret import *
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = True
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
-
-print("\n\n\n\n------------ENV VIRIABLES----------------")
+if DEBUG: print("\n\n\n\n\n\n")
 found=False
+if DEBUG: print("------------ENVIRONMENT VARIABLES----------------")
 for k in os.environ:
-    sys.stdout.write("{0:<25} : {1:<51}\n".format(k,os.environ[k]))
+    if DEBUG: sys.stdout.write("{0:<25} : {1:<51}\n".format(k,os.environ[k]))
     if k == "SECRET_KEY":
         found=True
-print("------------------------------------------\n\n\n\n")
+        SECRET_KEY = os.environ["SECRET_KEY"]
+if DEBUG: print("-------------------------------------------------")
+if DEBUG: print("\n\n\n\n\n\n")
 if not found:
-    print("Key not found")
+    print("ERROR: SECRET_KEY not found, exiting")
     exit(1)
 
-# if "CI" in os.environ:
-#     print('Doing a ci build')
-#     ci = os.environ['CI']
-#     SECRET_KEY = int(os.environ['SECRET_KEY'])
-# else:
-    # print('CI not found')
 
-SECRET_KEY = SECRET_KEY_HIDDEN
-
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -60,10 +53,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'volumen_main_app',
     'volumen_status_app',
-    'podcast_browser_app',
-    'player_app',
-    'user_management_app',
-    'volumen_help',
+    'volumen_podcast_browser_app',
+    'volumen_player_app',
+    'volumen_user_app',
+    'volumen_help_app',
 ]
 
 MIDDLEWARE = [
@@ -81,7 +74,7 @@ ROOT_URLCONF = 'django_volumen.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

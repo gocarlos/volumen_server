@@ -3,10 +3,7 @@ from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render, redirect
 
-
-# def index(request):
-#     return HttpResponse("Hello, world. You're at the polls index.")
-
+# TODO check if the user is already logged in. 
 def index(request):
     return render(request, "user_management/index.html")
 
@@ -19,7 +16,7 @@ def signup(request):
             raw_password = form.cleaned_data.get('password1')
             user = authenticate(username=username, password=raw_password)
             login(request, user)
-            return redirect('home')
+            return redirect('/')
     else:
         form = UserCreationForm()
     return render(request, 'user_management/signup.html', {'form': form})

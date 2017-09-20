@@ -1,3 +1,3 @@
 
 
-SECRET_KEY_HIDDEN = 'your key goes here'
+# SECRET_KEY_HIDDEN = 'your key goes here'

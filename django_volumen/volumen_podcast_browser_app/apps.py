@@ -2,4 +2,4 @@ from django.apps import AppConfig
 
 
 class PodcastBrowserAppConfig(AppConfig):
-    name = 'podcast_browser_app'
+    name = 'volumen_podcast_browser_app'

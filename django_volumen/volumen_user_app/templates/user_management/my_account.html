@@ -1,8 +1,0 @@
-
-<p>Here are your account details.</p>
-{% if request.user.is_authenticated %}
-  <p>you are authenticated.</p>
-  <p>Welcome, {{ user.get_username }} . Thanks for logging in.</p>
-{% else %}
-  <p>you are not authenticated. </p>
-{% endif %}

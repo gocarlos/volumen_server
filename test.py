@@ -1,7 +1,7 @@
 import os
 import sys
 
-
+;asjf;lsajf
 
 print("\n\n\n\n------------ENV VIRIABLES----------------")
 found = False
